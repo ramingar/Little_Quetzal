@@ -4,9 +4,9 @@ Little Quetzal es una modificación de la pantalla de login (greeter) para siste
 
 El resultado sería:
 
-![Little Quetzal 1](http://i.minus.com/ibw1aEXIXptMKW.png)
+![Little Quetzal 1](E1_001.png)
 
-![Little Quetzal 2](http://i.minus.com/i6vXUmg2tQVzt.png)
+![Little Quetzal 2](E1_002.png)
 
 
 Para poder ejecutarlo:
