@@ -1,0 +1,6 @@
+[theme]
+name=Little Quetzal
+description=Little Quetzal Theme (fondo creado por www.vladstudio.com)
+engine=lightdm-webkit-greeter
+url=index.html
+session=openbox

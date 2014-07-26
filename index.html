@@ -1,0 +1,78 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/normalizar.css" />
+<link rel="stylesheet" href="css/estilos.css" />
+<script type="text/javascript" src="js/greeter.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    password_prompt = false;
+    selected_user = null;
+
+    // <!-- Lista de usuarios -->
+    document.write('<div id="users">');
+    for (ii=0; ii < lightdm.users.length; ii++)
+    {
+        user = lightdm.users[ii];
+        var imagen = user.image.length > 0 ? 'file:///home/' + user.name  + '/.face' : 'Cake-icon.png';
+
+        document.write('<div id="user_' + user.name + '" class="user" onclick="start_authentication(\'' + user.name + '\')" >');
+        document.write('<div class="fila_usuario">');
+        document.write('<img width="48" height="48" alt="' + user.display_name + '" src="' + imagen + '" onerror="imgNotFound(this, \'' + user.name + '\')" />');
+        document.write('<div class="user_name">' + user.display_name + '</div>');
+        document.write('</div>');
+        document.write('<form id="password_table_' + user.name + '" class="password_table" action="javascript: provide_secret()" style="visibility:hidden;" >');
+        document.write('<label for="password_entry_' + user.name + '">Insert your password:</label><br/>');
+        document.write('<input id="password_entry_' + user.name + '" class="password" type="password" value="" onfocus="" />');
+        document.write('</form>');
+        document.write('<div id="message_table_' + user.name + '" class="message" style="visibility:hidden;" >');
+        document.write('<div id="message_label_' + user.name + '"></div>');
+        document.write('</div>');
+        document.write('</div>');
+    }
+    document.write('</div>');
+
+    // <!-- Botones de acciones -->
+    document.write('<div id="actionsArea" class="actions">');
+    document.write('<img src="img/action_hibernate.png" alt="Hibernate" title="Hibernate" onclick="lightdm.hibernate()" />');
+    document.write('<img src="img/action_suspend.png" alt="Suspend" title="Suspend" onclick="lightdm.suspend()" />');
+    document.write('<img src="img/action_restart.png" alt="Restart" title="Restart" onclick="lightdm.restart()" />');
+    document.write('<img src="img/action_shutdown.png" alt="Shutdown" title="Shutdown" onclick="lightdm.shutdown()" />');
+    document.write('</div>');
+
+</script>
+
+</body>
+
+</html>
+
+<!-- Si el user fuera "rafael", tiene que quedar un <body> como que este: -->
+<!--
+<body>
+
+<div id="users">
+    <div id="user_rafael" class="user" onclick="start_authentication('rafael')" >
+        <div class="fila_usuario">
+            <img width="48px" height="48px" src="Cake-icon.png" />
+            <div class="user_name">Rafael Minguet Garc&iacute;a</div>
+        </div>
+        <form id="password_table_rafael" class="password_table" action="javascript: provide_secret()">
+            <label for="password_entry_rafael">Insert your password:</label><br/>
+            <input id="password_entry_rafael" class="password" type="password" value="" onfocus="" />
+        </form>
+        <div id="message_table_rafael" class="message">
+            <div id="message_label_rafael">Error!!!</div>
+        </div>
+    </div>
+</div>
+
+<div id="actionsArea" class="actions">
+    <img src="img/action_hibernate.png" alt="Hibernate" title="Hibernate" onclick="lightdm.hibernate()" />
+    <img src="img/action_suspend.png" alt="Suspend" title="Suspend" onclick="lightdm.suspend()" />
+    <img src="img/action_restart.png" alt="Restart" title="Restart" onclick="lightdm.restart()" />
+    <img src="img/action_shutdown.png" alt="Shutdown" title="Shutdown" onclick="lightdm.shutdown()" />
+</div>
+
+</body>
+-->

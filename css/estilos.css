@@ -1,0 +1,57 @@
+body {
+     background: url("../little_quetzal.jpg") no-repeat fixed center center transparent;
+     color: white;
+     font-size: 15px;
+}
+
+#users {
+     margin-left: 250px;
+     margin-top: 200px;
+}
+
+div.user {
+     width: 500px;
+}
+
+div.user img {
+     float: left;
+     border: 1px solid gray;
+     padding: 5px;
+}
+
+div.user_name {
+     clear: right;
+     cursor: pointer;
+     font-size: 20px;
+     height: 38px;
+     margin-left: 68px;
+     padding-top: 10px;
+}
+
+div.user form {
+     margin-left: 68px;
+     margin-top: -10px;
+}
+
+div.user form label {
+     font-size: 10px;
+     left: 318px;
+     position: absolute;
+}
+
+input.password {
+     margin-top: -5px;
+}
+
+div.message {
+     font-style: italic;
+     left: 318px;
+     margin-top: -30px;
+     position: absolute;
+}
+
+div.actions {
+     bottom: 5px;
+     position: absolute;
+     right: 5px;
+}
